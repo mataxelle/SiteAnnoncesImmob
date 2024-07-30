@@ -36,7 +36,7 @@ class PropertyController extends Controller
             'sold' => false
         ]);
 
-        return view('admin.property.create', [
+        return view('admin.property.form', [
             'property' => $property
         ]);
     }
@@ -63,7 +63,7 @@ class PropertyController extends Controller
      */
     public function edit(Property $property)
     {
-        return view('admin.property.create', [
+        return view('admin.property.form', [
             'property' => $property
         ]);
     }
