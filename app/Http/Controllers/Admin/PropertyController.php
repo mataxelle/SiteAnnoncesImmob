@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\PropertyFormRequest;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class PropertyController extends Controller
 {
@@ -23,15 +25,29 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        //
+        $property = new Property();
+        $property->fill([
+            'surface' => 20,
+            'rooms' => 2,
+            'bedrooms' => 1,
+            'floor' => 0,
+            'city' => 'Levallois-Perret',
+            'postal_code' => 92300,
+            'sold' => false
+        ]);
+
+        return view('admin.property.create', [
+            'property' => $property
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PropertyFormRequest $request)
     {
-        //
+        $property = Property::create($request->validated());
+        return to_route('admin.property.index')->with('success', 'La propriété a bien été ajouté');
     }
 
     /**
