@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\OptionFormRequest;
 use App\Models\Option;
-use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Return_;
 
 class OptionController extends Controller
 {
