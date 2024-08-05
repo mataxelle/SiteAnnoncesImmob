@@ -36,8 +36,8 @@
                         </a>
                     </li>
                     <li class="nav-item mx-2 mx-lg-1">
-                        <a class="nav-link" href="#!">
-                            A propos de
+                        <a class="nav-link" href="{{ route('admin.option.create') }}">
+                            Ajouter une option
                         </a>
                     </li>
                 </ul>
