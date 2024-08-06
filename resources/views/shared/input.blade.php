@@ -1,5 +1,5 @@
 @php
-    $label ??= null;
+    $label ??= ucfirst($name);
     $type ??= 'text';
     $class ??= null;
     $name ??= '';

@@ -86,11 +86,19 @@
             ])
         </div>
 
+        @include('shared.select', [
+            'label' => 'Options',
+            'name' => 'options',
+            'value' => $property->options()->pluck('id'),
+            'multiple' => true,
+        ])
+
         @include('shared.checkbox', [
             'class' => 'col',
             'label' => 'Vendu',
             'name' => 'sold',
             'value' => $property->sold,
+            'options' => $options,
         ])
 
         <div>
