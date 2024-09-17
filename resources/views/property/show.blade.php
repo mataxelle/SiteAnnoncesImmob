@@ -56,7 +56,7 @@
                     'label' => 'Votre message',
                     'name' => 'message',
                     'type' => 'textarea',
-                    'value' => 'Je souhaite des information concernant ce bien.',
+                    'value' => 'Je souhaite des information concernant ce bien',
                 ])
                 <div>
                     <button class="btn btn-primary">Nous contacter</button>
