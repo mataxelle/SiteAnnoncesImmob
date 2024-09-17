@@ -18,19 +18,21 @@
         <div class="mt-4">
             <h4>Intéressé par ce bien ?</h4>
 
-            <form action="" method="post" class="vstack gap-3">
+            <form action="{{ route('property.contact', $property) }}" method="post" class="vstack gap-3">
                 @csrf
                 <div class="row">
                     @include('shared.input', [
                         'class' => 'col',
                         'label' => 'Prénom',
                         'name' => 'firstname',
+                        'value' => 'Mathieu',
                     ])
 
                     @include('shared.input', [
                         'class' => 'col',
                         'label' => 'Nom',
                         'name' => 'lastname',
+                        'value' => 'Dupont',
                     ])
                 </div>
                 <div class="row">
@@ -38,6 +40,7 @@
                         'class' => 'col',
                         'label' => 'Téléphone',
                         'name' => 'phone',
+                        'value' => '06 12 34 56 78 90',
                     ])
 
                     @include('shared.input', [
@@ -45,6 +48,7 @@
                         'label' => 'Email',
                         'name' => 'email',
                         'type' => 'email',
+                        'value' => 'mathieu@dupontest.com',
                     ])
                 </div>
                 @include('shared.input', [
@@ -52,6 +56,7 @@
                     'label' => 'Votre message',
                     'name' => 'message',
                     'type' => 'textarea',
+                    'value' => 'Je souhaite des information concernant ce bien.',
                 ])
                 <div>
                     <button class="btn btn-primary">Nous contacter</button>

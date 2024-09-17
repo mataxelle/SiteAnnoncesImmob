@@ -26,7 +26,9 @@ Route::get('/propriétés/{slug}-{property}', [ControllersPropertyController::cl
     'slug' => $slugRegex,
     'property' => $idRegex
 ]);
-
+Route::post('propriétés/{property}/contact', [ControllersPropertyController::class, 'contact'])->name('property.contact')->where([
+    'property' => $idRegex
+]);
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('property', PropertyController::class);
     Route::resource('option', OptionController::class);
