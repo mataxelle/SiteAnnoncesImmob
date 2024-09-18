@@ -11,6 +11,13 @@
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
     @vite(['resources/css/app.css'])
     <title>@yield('title') | Administration</title>
+    <style>
+        @layer reset {
+            button {
+                all: unset;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -48,6 +55,19 @@
                     </li>
                 </ul>
                 <!-- Right links -->
+                <div class="">
+                    @auth
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="nav-link">Se déconnecter</button>
+                                </form>
+                            </li>
+                        </ul>
+                    @endauth
+                </div>
             </div>
             <!-- Collapsible wrapper -->
         </div>
