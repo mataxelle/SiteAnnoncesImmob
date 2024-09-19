@@ -39,6 +39,11 @@
                             Toutes les propriétés
                         </a>
                     </li>
+                    @guest
+                        <li class="nav-item mx-2 mx-lg-1">
+                            <a href="{{ route('login') }}" class="nav-link">Se connecter</a>
+                        </li>
+                    @endguest
                 </ul>
                 <!-- Right links -->
             </div>
