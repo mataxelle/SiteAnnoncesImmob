@@ -30,9 +30,13 @@ Route::get('/propriétés/{slug}-{property}', [ControllersPropertyController::cl
 Route::post('propriétés/{property}/contact', [ControllersPropertyController::class, 'contact'])->name('property.contact')->where([
     'property' => $idRegex
 ]);
-Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [AuthController::class, 'login'])
+    ->middleware('guest')
+    ->name('login');
 Route::post('/ login', [AuthController::class, 'doLogin']);
-Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::delete('/logout', [AuthController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('property', PropertyController::class);
     Route::resource('option', OptionController::class);
