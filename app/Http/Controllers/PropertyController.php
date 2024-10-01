@@ -14,7 +14,7 @@ class PropertyController extends Controller
 {
     public function index(SearchPropertiesRequest $request)
     {
-        $query = Property::query()->orderBy('created_at', 'desc');
+        $query = Property::query()->available()->orderBy('created_at', 'desc');
 
         if ($request->validated('surface')) {
             $query = $query->where('surface', '>=', $request->validated('surface'));
