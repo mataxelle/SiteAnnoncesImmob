@@ -25,7 +25,7 @@
                 <tr>
                     <td>{{ $property->title }}</td>
                     <td>{{ $property->surface }}m²</td>
-                    <td>{{ number_format($property->price, thousands_separator: ' ') }}</td>
+                    <td>{{ number_format($property->price, thousands_separator: ' ') }}€</td>
                     <td>{{ $property->city }}</td>
                     <td>{{ $property->sold == 1 ? 'Vendu' : '' }}</td>
                     <td>

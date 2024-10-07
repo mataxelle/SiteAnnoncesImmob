@@ -10,7 +10,7 @@
         <h2>{{ $property->rooms }} pièces - {{ $property->surface }} m²</h2>
 
         <div class="text-primary fm-bold" style="font-size: 4rem;">
-            {{ number_format($property->price, thousands_separator: ' ') }}e
+            {{ number_format($property->price, thousands_separator: ' ') }}€
         </div>
 
         <hr>
