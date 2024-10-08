@@ -27,7 +27,7 @@
                 </div>
             @empty
                 <div class="col text-center mb-3">
-                    Auncu résultat
+                    Aucun résultat
                 </div>
             @endforelse
         </div>
